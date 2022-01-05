@@ -1,14 +1,21 @@
 package main
 
 import (
-	auth "User_Session_Manegment/middleware"
-	"User_Session_Manegment/public"
+	"User_Session_Manegement/middleware/auth"
+	"User_Session_Manegement/public"
+	"log"
 	"net/http"
 
 	"github.com/gorilla/mux"
+	"github.com/joho/godotenv"
 )
 
 func main() {
+	err := godotenv.Load(".env")
+
+	if err != nil {
+		log.Fatalf("Error loading .env file")
+	}
 	router := mux.NewRouter()
 	router.HandleFunc("/", auth.IsNotAuth(public.Home)).Methods("GET")
 	router.HandleFunc("/signin", auth.IsNotAuth(public.SigninGet)).Methods("GET")

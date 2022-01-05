@@ -3,11 +3,12 @@ package public
 import (
 	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/sessions"
 )
 
-var Store = sessions.NewCookieStore([]byte("secret"))
+var Store = sessions.NewCookieStore([]byte(os.Getenv("SECRET")))
 
 func SignupGet(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, "./templates/signup.html")

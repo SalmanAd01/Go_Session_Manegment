@@ -1,7 +1,7 @@
 package auth
 
 import (
-	"User_Session_Manegment/public"
+	"User_Session_Manegement/public"
 	"fmt"
 	"net/http"
 )
