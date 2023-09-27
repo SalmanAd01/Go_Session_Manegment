@@ -18,5 +18,5 @@ func SignupPost(w http.ResponseWriter, r *http.Request) {
 	My_Map["username"] = username
 	My_Map["password"] = password
 	fmt.Println("username:", username, "password:", password)
-	http.Redirect(w, r, "/signup", http.StatusFound)
+	http.Redirect(w, r, "/signin", http.StatusFound)
 }
