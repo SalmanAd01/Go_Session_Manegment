@@ -5,7 +5,6 @@ import (
 	"User_Session_Manegement/public"
 	"log"
 	"net/http"
-
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
 )
